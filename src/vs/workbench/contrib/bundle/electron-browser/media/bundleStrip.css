@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+/*
+ * The strip is BundleCode's own, so no codicon depicts it. The registry cannot
+ * be given a glyph without shipping a font, so the icon is drawn as a mask
+ * instead and the generated `content` rule is overridden here.
+ *
+ * `.codicon.codicon-*` outranks the registry's single-class selector, so this
+ * wins regardless of which stylesheet lands first.
+ *
+ * Three columns: the strip with its projects, the workbench's own side bar as a
+ * solid block, then the editor. Filling the middle column rather than outlining
+ * it keeps the divider count down, without which none of it survives 16px.
+ */
+.codicon.codicon-bundle-strip::before {
+	content: '';
+	display: block;
+	width: 16px;
+	height: 16px;
+	background-color: currentColor;
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Cpath%20fill-rule='evenodd'%20d='M1%202h14v12H1V2zm1%201v10h12V3H2z'/%3E%3Cpath%20d='M6%203h1v10H6V3z'/%3E%3Cpath%20d='M3%205h2v1H3V5zm0%202.5h2v1H3v-1zm0%202.5h2v1H3v-1z'/%3E%3Cpath%20d='M7%203h3v10H7V3z'/%3E%3C/svg%3E");
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: 16px 16px;
+}

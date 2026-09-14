@@ -1,0 +1,29 @@
+* text=auto
+
+LICENSE.txt eol=crlf
+ThirdPartyNotices.txt eol=crlf
+
+*.bat eol=crlf
+*.cmd eol=crlf
+*.ps1 eol=lf
+*.sh eol=lf
+*.rtf -text
+**/*.json linguist-language=jsonc
+
+# 上流の文書を丸ごと差し替えたもの。上流を取り込むたびに全面衝突するので、
+# こちら側を採る指定にしてある。BundleCode の README に Code - OSS の紹介文が
+# 混ざる余地は無いし、毎回同じ判断を手で繰り返す意味も無い。
+#
+# ⚠️ **`merge=ours` はドライバを定義しないと黙って無視される。** clone ごとに一度:
+#     git config merge.ours.driver true
+# 定義が無くても merge は成功してしまい、上流の中身が入る。効いているかは
+# 取り込んだ後に README の見出しを見れば分かる。
+#
+# ⚠️ rebase では ours と theirs が入れ替わるので、この指定は当てにならない。
+# 上流追随は merge で行う。
+#
+# LICENSE.txt はここに入れない。上流の著作権表示を保持する義務があり、
+# 上流が更新したときに黙って捨てると**ライセンス違反になりうる**。衝突させて目で見る。
+README.md merge=ours
+SECURITY.md merge=ours
+CONTRIBUTING.md merge=ours

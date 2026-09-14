@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>@@NAME@@.desktop</id>
+	<metadata_license>@@LICENSE@@</metadata_license>
+	<project_license>@@LICENSE@@</project_license>
+	<name>@@NAME_LONG@@</name>
+	<url type="homepage">https://github.com/himeno/BundleCode</url>
+	<summary>Several workspaces in one window</summary>
+	<description>
+		<p>A code editor that keeps several workspaces open in one window, each with its own extension host, and switches between them from a strip down the side. A fork of Code - OSS; not affiliated with Microsoft.</p>
+	</description>
+</component>

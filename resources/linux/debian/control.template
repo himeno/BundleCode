@@ -1,0 +1,14 @@
+Package: @@NAME@@
+Version: @@VERSION@@
+Section: devel
+Depends: @@DEPENDS@@
+Recommends: @@RECOMMENDS@@
+Priority: optional
+Architecture: @@ARCHITECTURE@@
+Maintainer: BundleCode <https://github.com/himeno/BundleCode/issues>
+Homepage: https://github.com/himeno/BundleCode
+Installed-Size: @@INSTALLEDSIZE@@
+Description: Several workspaces in one window
+ Code editor that keeps several workspaces open in one window, each with
+ its own extension host, and switches between them from a strip down the
+ side. A fork of Code - OSS; not affiliated with Microsoft.
